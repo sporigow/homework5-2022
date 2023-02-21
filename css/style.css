@@ -1,0 +1,372 @@
+/*step 1 do this later*/
+
+#logo{
+    animation: animate 5s ;  
+    width: auto; 
+}
+
+@keyframes animate{
+    
+    0% {top: 0px; opacity: 0; width: 25px;}
+    100% {top: 200px; opacity: 1; width: 475px;}
+    /* 
+    how did u get the 200px??????????????
+    
+    
+    from {
+        transform: scaleX(25px);  
+        opacity: 0; 
+    }
+    to {
+         transform: scaleX(475px); 
+        opacity: 1;
+    } */
+
+    /* from {opacity: 0}
+    to {opacity:1} */
+}
+
+/* Step 28?
+/*Edit the body element to use the Poppins font 
+(using Google fonts) with serif as a backup.  
+It should also use the image “concrete_seamless.png” 
+as a background-image with a backup color of #f1f1f1.*/
+
+body{
+    font-family: 'Poppins', serif;
+    background-image: url(../images/concrete_seamless.png);
+    background-color: #f1f1f1;
+    
+   
+    /* 
+    background: url('..images/concrete_seamless.png'), #f1f1f1;
+    */
+}
+
+
+/*Step 3*/
+/* Edit the css for the header 
+tag (all instances) to use flex to match our example.*/
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+/* Step 4*/
+/* Edit the css for the nav_links class to use flex 
+to match our example. Do not modify the list items or the 
+links - modify the nav_links class to use flex.*/
+
+.nav_links{
+    display:flex;
+    flex-direction: column;
+}
+
+/* Step 5*/
+/*Style the links so that they have the same color even 
+after they have been visited. This is a “challenge” problem. 
+You should not give or receive help when completing it.
+ */
+
+ a{
+    color:blue;
+ }
+
+ a:link, a:visited{
+    color:blue;
+ }
+
+ 
+ /* Step 6 */
+ /* Identify the proper selector to style 
+ONLY those header elements that are direct 
+children of a card class.  The required styling is 
+the following: 
+background: #288088,
+solid 2px border using #45ADAD,
+20px of padding on the top and the bottom, 
+50px border-radius on the top left and right corners. 
+ */
+
+ div.card > header {
+    background-color: #288088;
+    border: solid 2px #45ADAD;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+    
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    overflow:hidden;
+    
+ }
+
+
+ /*
+ Check your work. The corners probably aren’t curving 
+quite as you expected. Use Inspect Element to fix 
+this problem. You will need to utilize a second selector.
+ */
+
+ .card{
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px; 
+ }
+
+/* Step 7 */
+/*  Steps 7 and 8 go together.  
+    You won’t have the right 
+    “look” until you finish both.
+
+    Edit the css for the card class to match our example. 
+    Achieve this by using a flex-property to specify an 
+    initial “size” of 450px.  You need to think about this 
+    from a “flex” perspective and realize that flex-direction 
+    will affect the size of the elements.  You can see that 
+    in the mobile view they all have the same width. */
+
+ 
+    
+   /* flex-shrink: 450px;/*
+    
+    
+   /* flex-basis: 450px; */
+/*flex: 0 0 450px; */
+
+
+/* not sure if this works*/
+
+ 
+ 
+
+ /* Step 8 */
+ /* Edit the css for the pricing class to match our example. 
+ You should use flex and the cards should be centered both 
+ horizontally and vertically.*/
+
+div.card {
+    display: flex;
+    flex-basis: 450px;
+    
+    flex-grow: .25;
+    flex-direction: column;
+    align-items: center;
+    align-items: stretch;
+    /* flex-grow: auto; */
+}
+
+/* div.card {
+    min-width: 450px;
+    } */
+
+
+
+
+/* div.card:first-child{
+    display: flex;
+    align-items: stretch;
+    
+} */
+
+
+
+/* div.pricing:nth-child(2){
+
+} */
+
+
+
+ div.pricing {
+    display: flex;
+    /* flex-direction: column; */
+    flex-flow: row wrap;
+   
+    justify-content: center;
+    align-items: center;
+ }
+
+ 
+
+
+
+
+ /*step 9*/
+ .gallery > img{
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+ }
+
+  /* step 10 */
+ div.gallery{
+    display:flex;
+    flex-flow: row wrap;
+    /* align-content: flex-start; */
+    justify-content: center;
+
+ }
+
+
+ /* step 11 */
+
+ @media only screen and (min-width: 900px)
+ {
+
+    .nav_links{
+        flex-direction: row;
+        /* justify-content: flex-start; */
+        /* position: fixed; */
+    }
+
+
+    body a + header{
+    flex-direction: row;
+    justify-content: space-between;
+
+    }
+
+    /* step 12 */
+
+    div.pricing > div.card{
+    flex-basis: 275px;
+    max-width: 275px;
+    
+    
+    
+    }
+
+    div.card {
+        flex-shrink: 3;
+    } 
+
+    div.pricing{
+    flex-flow: row nowrap;
+    
+    }
+
+
+
+/* STEP 13 */
+
+    body a + header{
+        position:fixed;
+        z-index: 1000;
+        width: 100%;
+    }
+
+  
+
+    h1{
+        padding-top: 100px;
+    }
+
+
+    /* body a + header{
+        position:relative; 
+        top: 0; 
+        position: sticky;
+        z-index: 50;
+    }  */ 
+
+
+/* body{
+    display: flex;
+    flex-flow: row wrap;
+}
+    body a + header{
+        justify-self: stretch;
+        
+    }
+
+   
+
+} */
+
+
+ }
+
+
+
+/* step 14 */
+@media screen and (prefers-reduced-motion: reduce) {
+    #logo {
+      animation: none;
+    }
+  }
+
+
+/* @media screen and (prefers-reduced-motion: reduce){
+        }
+    /* skipped for now add animation */
+    /* get rtid of key frames? */
+ 
+
+
+
+    /* step 15 */
+@media print{
+    
+    @page {
+        size: portrait;
+    }
+
+    body{
+        font-family:Arial, Helvetica;
+        background-image: none;
+    }
+    
+
+    .nav_links{
+        flex-direction: row;
+        justify-content: space-around;
+        /* justify-content: flex-start;
+        align-content: space-between; */
+        /* justify-content: space-between; */
+        /* align-items: start; */
+        
+    }
+
+    /* .nav_item:nth-child(2){
+        padding-left: 160px;
+        padding-right: 160px;
+    } */
+
+    nav{
+        width:100%;
+    }
+
+
+    div.card{
+        flex-basis: 325px;
+        max-width: 325px;
+        border: 2px solid #45ADDD ;
+
+    }
+
+
+    div.pricing{
+        flex-flow: row nowrap;
+        align-items: flex-end;
+    }
+
+    div.gallery{
+        display: none;
+    }
+
+
+    div.pricing + h2{
+        visibility: hidden;
+    }
+
+    div.pricing ul li:nth-child(2)::after{
+        content:"\1F44D";
+    }
+
+    
+}
+
+ 
